@@ -26,11 +26,11 @@ bcToolbar.moveButtonToToolbar = function(newButton, description)
 	if bcToolbar.config.buttons[description] ~= false then
 		newButton:setVisible(true);
 		bcToolbar.window:setWidth(bcToolbar.config.main.width * bcToolbar.config.main.buttonSize + 4);
-		bcToolbar.window:setHeight(math.ceil((1+bcToolbar.y) / bcToolbar.config.main.width) * bcToolbar.config.main.buttonSize + 4 + 16);
+		bcToolbar.window:setHeight((1+bcToolbar.y) * bcToolbar.config.main.buttonSize + 4 + 16);
 		bcToolbar.window:addChild(newButton);
 
 		newButton:setX(bcToolbar.x * bcToolbar.config.main.buttonSize + 2);
-		newButton:setY(math.floor(bcToolbar.y / bcToolbar.config.main.width) * bcToolbar.config.main.buttonSize + 2 + 16);
+		newButton:setY(bcToolbar.y * bcToolbar.config.main.buttonSize + 2 + 16);
 		newButton:setWidth(bcToolbar.config.main.buttonSize);
 		newButton:setHeight(bcToolbar.config.main.buttonSize);
 		newButton.forcedWidthImage = bcToolbar.config.main.buttonSize;
