@@ -1,0 +1,8 @@
+name=Toolbar
+poster=empty.png
+description=This is a toolbar to extend the left bar of quick-access icons (inventory, health, crafting). <LINE> Mods can extend this list and players can select which icons they want to have visible.
+id=bcToolbar
+
+modversion=0.1.0
+pzversion=32.24
+versionurl=https://raw.githubusercontent.com/blind-coder/pz-bcToolbar/master/mod.info
