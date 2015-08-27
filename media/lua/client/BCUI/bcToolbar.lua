@@ -1,6 +1,5 @@
-require("ISEquippedItem");
-require("PlayerData/ISPlayerData");
--- ISEquippedItem.instance
+require("ISUI/ISEquippedItem");
+require("ISUI/PlayerData/ISPlayerData");
 
 bcToolbar = {};
 bcToolbar.x = 0;
