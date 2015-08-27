@@ -21,7 +21,7 @@ bcToolbar.moveButtonToToolbar = function(newButton, description)--{{{
 	end
 
 	table.insert(bcToolbar.buttons, newButton);
-	newButton:setTooltip(getText(description));
+	newButton:setTooltip(description);
 
 	if bcToolbar.config.buttons[description] ~= false then
 		newButton:setVisible(true);
@@ -93,14 +93,14 @@ bcToolbar.showConfig = function()--{{{
 		return;
 	end
 	local w = ISCollapsableWindow:new(100, 100, getCore():getScreenWidth() - 200, getCore():getScreenHeight() - 200);
-	w:setTitle("Configure Toolbar");
+	w:setTitle(getText("UI_ConfigureToolbar"));
 	w:setResizable(false);
 	w:addToUIManager();
 	w.pinButton:setVisible(false);
 	w.collapseButton:setVisible(false);
 	bcToolbar.configWindow = w;
 
-	w:addChild(ISLabel:new(4, 16, 32, "Toolbar width:", 1, 1, 1, 1, nil, true));
+	w:addChild(ISLabel:new(4, 16, 32, getText("UI_ToolbarWidth"), 1, 1, 1, 1, nil, true));
 	w.widthMinusButton = ISButton:new(150, 16, 32, 32, "-", nil, bcToolbar.reduceWidth);
 	w:addChild(w.widthMinusButton);
 	w.widthLabel = ISLabel:new(190, 16, 32, tostring(bcToolbar.config.main.width), 1, 1, 1, 1, nil, true);
@@ -108,7 +108,7 @@ bcToolbar.showConfig = function()--{{{
 	w.widthPlusButton = ISButton:new(214, 16, 32, 32, "+", nil, bcToolbar.increaseWidth);
 	w:addChild(w.widthPlusButton);
 
-	w:addChild(ISLabel:new(4, 56, 32, "Button width:", 1, 1, 1, 1, nil, true));
+	w:addChild(ISLabel:new(4, 56, 32, getText("UI_ToolbarButtonWidth"), 1, 1, 1, 1, nil, true));
 	w.buttonSizeMinusButton = ISButton:new(150, 56, 32, 32, "-", nil, bcToolbar.reduceButtonSize);
 	w:addChild(w.buttonSizeMinusButton);
 	w.buttonSizeLabel = ISLabel:new(190, 56, 32, tostring(bcToolbar.config.main.buttonSize), 1, 1, 1, 1, nil, true);
@@ -116,7 +116,8 @@ bcToolbar.showConfig = function()--{{{
 	w.buttonSizePlusButton = ISButton:new(214, 56, 32, 32, "+", nil, bcToolbar.increaseButtonSize);
 	w:addChild(w.buttonSizePlusButton);
 
-	w.buttonTickBox = ISTickBox:new(4, 96, w:getWidth() - 8, w:getHeight() - (16+96), "", nil, bcToolbar.showHideButton);
+	w:addChild(ISLabel:new(4, 96, 32, getText("UI_ShowButtons"), 1, 1, 1, 1, nil, true));
+	w.buttonTickBox = ISTickBox:new(4, 128, w:getWidth() - 8, w:getHeight() - (16+128), "", nil, bcToolbar.showHideButton);
 	w.buttonTickBox:initialise();
 	w:addChild(w.buttonTickBox);
 
@@ -168,9 +169,9 @@ bcToolbar.initialise = function()--{{{
 	bcToolbar.window.borderColor = {r=0.4, g=0.4, b=0.4, a=1};
 	bcToolbar.window.bringToTop = bcToolbar.bringToTop;
 
-	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.invBtn, "Inventory");
-	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.healthBtn, "Health");
-	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.craftingBtn, "Crafting");
+	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.invBtn, getText("UI_ToolbarInventory"));
+	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.healthBtn, getText("UI_ToolbarHealth"));
+	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.craftingBtn, getText("UI_ToolbarCrafting"));
 
 	triggerEvent("bcToolbarAddButtons");
 end

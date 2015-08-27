@@ -1,0 +1,9 @@
+UI_EN = {
+	UI_ConfigureToolbar = "Configure Toolbar",
+	UI_ToolbarWidth = "Toolbar width:",
+	UI_TOolbarButtonWidth = "Button size:",
+	UI_ShowButtons = "Show the following buttons:",
+	UI_ToolbarInventory = "Inventory",
+	UI_ToolbarHealth = "Health",
+	UI_ToolbarCrafting = "Crafting"
+}

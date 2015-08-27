@@ -1,0 +1,9 @@
+UI_DE = {
+	UI_ConfigureToolbar = "Toolbar konfigurieren",
+	UI_ToolbarWidth = "Toolbar Spalten:",
+	UI_TOolbarButtonWidth = "Buttongroesse:",
+	UI_ShowButtons = "Zeige nur die folgenden Buttons:",
+	UI_ToolbarInventory = "Inventar",
+	UI_ToolbarHealth = "Gesundheit",
+	UI_ToolbarCrafting = "Crafting"
+}
