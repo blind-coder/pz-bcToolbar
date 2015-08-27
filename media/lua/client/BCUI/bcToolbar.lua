@@ -14,7 +14,7 @@ bcToolbar.config.position = {};
 bcToolbar.config.position.x = 0;
 bcToolbar.config.position.y = 105;
 
-bcToolbar.moveButtonToToolbar = function(newButton, description)
+bcToolbar.moveButtonToToolbar = function(newButton, description)--{{{
 	-- Make sure buttons are not added twice
 	for _,btn in pairs(bcToolbar.buttons) do
 		if btn == newButton then return end
@@ -45,8 +45,8 @@ bcToolbar.moveButtonToToolbar = function(newButton, description)
 		newButton:setVisible(false);
 	end
 end
-
-bcToolbar.resizeToolbar = function(newWidth)
+--}}}
+bcToolbar.resizeToolbar = function(newWidth)--{{{
 	bcToolbar.x = 0;
 	bcToolbar.y = 0;
 	bcToolbar.config.main.width = newWidth;
@@ -57,31 +57,35 @@ bcToolbar.resizeToolbar = function(newWidth)
 	end
 	bcToolbar.save();
 end
-
-bcToolbar.save = function()
+--}}}
+bcToolbar.save = function()--{{{
 	bcUtils.writeINI("bcToolbar.ini", bcToolbar.config);
 end
-
-bcToolbar.reduceWidth = function()
+--}}}
+bcToolbar.reduceWidth = function()--{{{
 	bcToolbar.resizeToolbar(math.max(1, bcToolbar.config.main.width - 1));
 	bcToolbar.configWindow.widthLabel.name = tostring(bcToolbar.config.main.width);
 end
-bcToolbar.increaseWidth = function()
+--}}}
+bcToolbar.increaseWidth = function()--{{{
 	bcToolbar.resizeToolbar(math.min(8, bcToolbar.config.main.width + 1));
 	bcToolbar.configWindow.widthLabel.name = tostring(bcToolbar.config.main.width);
 end
-bcToolbar.reduceButtonSize = function()
+--}}}
+bcToolbar.reduceButtonSize = function()--{{{
 	bcToolbar.config.main.buttonSize = math.max(16, bcToolbar.config.main.buttonSize - 8);
 	bcToolbar.configWindow.buttonSizeLabel.name = tostring(bcToolbar.config.main.buttonSize);
 	bcToolbar.resizeToolbar(bcToolbar.config.main.width);
 end
-	bcToolbar.increaseButtonSize = function()
+--}}}
+bcToolbar.increaseButtonSize = function()--{{{
 	bcToolbar.config.main.buttonSize = math.min(128, bcToolbar.config.main.buttonSize + 8);
 	bcToolbar.configWindow.buttonSizeLabel.name = tostring(bcToolbar.config.main.buttonSize);
 	bcToolbar.resizeToolbar(bcToolbar.config.main.width);
 end
+--}}}
 
-bcToolbar.showConfig = function()
+bcToolbar.showConfig = function()--{{{
 	if bcToolbar.configWindow then
 		bcToolbar.configWindow:setVisible(true);
 		bcToolbar.configWindow:setWidth(getCore():getScreenWidth() - 200);
@@ -123,13 +127,13 @@ bcToolbar.showConfig = function()
 		i = i + 1;
 	end
 end
-
-bcToolbar.showHideButton = function(_, key, value)
+--}}}
+bcToolbar.showHideButton = function(_, key, value)--{{{
 	bcToolbar.config.buttons[bcToolbar.configWindow.buttonTickBox.options[key]] = value;
 	bcToolbar.resizeToolbar(bcToolbar.config.main.width);
 end
-
-bcToolbar.bringToTop = function(self)
+--}}}
+bcToolbar.bringToTop = function(self)--{{{
 	ISCollapsableWindow.bringToTop(self);
 	if self.moving then
 		bcToolbar.config.position.x = self:getX();
@@ -137,8 +141,8 @@ bcToolbar.bringToTop = function(self)
 		bcToolbar.save();
 	end
 end
-
-bcToolbar.initialise = function()
+--}}}
+bcToolbar.initialise = function()--{{{
 	bcToolbar.buttons = {};
 	local newConfig = bcUtils.readINI("bcToolbar.ini");
 	if newConfig.main then
@@ -170,6 +174,6 @@ bcToolbar.initialise = function()
 
 	triggerEvent("bcToolbarAddButtons");
 end
-
+--}}}
 Events.OnCreatePlayer.Add(bcToolbar.initialise);
 LuaEventManager.AddEvent("bcToolbarAddButtons");
