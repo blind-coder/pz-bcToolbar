@@ -177,10 +177,3 @@ end
 --}}}
 Events.OnCreatePlayer.Add(bcToolbar.initialise);
 LuaEventManager.AddEvent("bcToolbarAddButtons");
-
-if getActivatedMods():contains("NecroForge") then
-	require("NecroForge");
-	Events.OnGameStart.Add(function()
-		bcToolbar.moveButtonToToolbar(_G.NecroPorthole, "NecroForge")
-	end);
-end
