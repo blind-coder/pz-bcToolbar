@@ -6,7 +6,7 @@ ThisMod.SetupToolbar = function()
 	bcToolbar.moveButtonToToolbar(ThisMod.toolbarButton, "ThisMod");
 end
 if getActivatedMods():contains("bcToolbar") then
-	require("bcToolbar");
+	require("BCUI/bcToolbar");
 	Events.bcToolbarAddButtons.Add(ThisMod.SetupToolbar);
 end
 ````
