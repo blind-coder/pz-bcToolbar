@@ -171,6 +171,7 @@ bcToolbar.initialise = function()--{{{
 	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.invBtn, getText("UI_ToolbarInventory"));
 	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.healthBtn, getText("UI_ToolbarHealth"));
 	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.craftingBtn, getText("UI_ToolbarCrafting"));
+	bcToolbar.moveButtonToToolbar(ISEquippedItem.instance.movableBtn, getText("UI_ToolbarMovable"));
 
 	triggerEvent("bcToolbarAddButtons");
 end

@@ -5,5 +5,6 @@ UI_EN = {
 	UI_ShowButtons = "Show the following buttons:",
 	UI_ToolbarInventory = "Inventory",
 	UI_ToolbarHealth = "Health",
-	UI_ToolbarCrafting = "Crafting"
+	UI_ToolbarCrafting = "Crafting",
+	UI_ToolbarMovable = "Furniture"
 }

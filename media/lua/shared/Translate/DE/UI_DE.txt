@@ -5,5 +5,6 @@ UI_DE = {
 	UI_ShowButtons = "Zeige nur die folgenden Buttons:",
 	UI_ToolbarInventory = "Inventar",
 	UI_ToolbarHealth = "Gesundheit",
-	UI_ToolbarCrafting = "Crafting"
+	UI_ToolbarCrafting = "Crafting",
+	UI_ToolbarMovable = "Einrichtung"
 }
