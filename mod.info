@@ -4,6 +4,6 @@ description=This is a toolbar to extend the left bar of quick-access icons (inve
 id=bcToolbar
 require=bcUtils
 
-modversion=0.1.0
-pzversion=32.24
+modversion=0.1.2
+pzversion=33.12
 versionurl=https://raw.githubusercontent.com/blind-coder/pz-bcToolbar/master/mod.info
