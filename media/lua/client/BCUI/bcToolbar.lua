@@ -178,3 +178,11 @@ end
 --}}}
 Events.OnCreatePlayer.Add(bcToolbar.initialise);
 LuaEventManager.AddEvent("bcToolbarAddButtons");
+
+ISMoveablesIconPopup.prerender = function(self)
+	self:setX(10 + ISEquippedItem.instance.movableBtn:getAbsoluteX());
+	self:setY(10 + ISEquippedItem.instance.movableBtn:getAbsoluteY());
+	self:setWidth(ISEquippedItem.instance.movableIconPickup:getWidth()*4);
+	self:setHeight(ISEquippedItem.instance.movableIconPickup:getHeight());
+	self:setAlwaysOnTop(true);
+end
